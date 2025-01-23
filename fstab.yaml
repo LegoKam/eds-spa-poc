@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p130360-e1272151.adobeaemcloud.com/bin/franklin.delivery/adobe-rnd/aem-boilerplate-xwalk/main"
+    url: "https://author-p129970-e1492622.adobeaemcloud.com/bin/franklin.delivery/LegoKam/eds-spa-poc/main"
     type: "markup"
     suffix: ".html"
