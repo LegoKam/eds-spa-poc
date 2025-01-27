@@ -15,7 +15,7 @@ import {
       const data = await response.json();
 
       const config = data.data.adventureList.items.reduce((acc, item) => {
-        acc[item.title] = item.description.html;
+        acc[item.title] = item.description.plaintext;
         return acc;
       }, {});
 
