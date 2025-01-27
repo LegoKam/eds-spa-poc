@@ -11,7 +11,7 @@ import {
     block.textContent = '';
 
     try {
-      const response = await fetch('https://publish-p129970-e1492622.adobeaemcloud.com/graphql/execute.json/aem-demo-assets/adventures-all?a=b');
+      const response = await fetch('https://publish-p129970-e1492622.adobeaemcloud.com/graphql/execute.json/aem-demo-assets/adventures-all?b=c');
       const data = await response.json();
 
       const config = data.data.adventureList.items.reduce((acc, item) => {
