@@ -1,7 +1,3 @@
-import { h } from '../../scripts/preact.js';
-import htm from '../../scripts/htm.js';
-
-
 export default function ProductTile({ product }) {
     console.log(product);
 
