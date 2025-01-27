@@ -12,7 +12,12 @@ const ProductsApp = ({ list, resolve }) => {
     </div>
   `);
   resolve();
-  return html`<br/><Experience list><br/><div class="product-grid">${detailItems}</div>`;
+  return html`
+  <div>
+    <h1>Experience Products List</h1>
+    <div class="product-grid">${detailItems}</div>
+  </div>
+`;
 };
 
 export default ProductsApp;
