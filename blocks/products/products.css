@@ -1,8 +1,14 @@
-.product-tile {
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .product-tile {
     border: 1px solid #dadada;
     background-color: var(--background-color);
     padding: 16px;
-    margin: 16px;
     text-align: center;
   }
   
