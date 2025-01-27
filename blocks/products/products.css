@@ -1,0 +1,22 @@
+.product-tile {
+    border: 1px solid #dadada;
+    background-color: var(--background-color);
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+  }
+  
+  .product-tile img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-tile h2 {
+    font-size: 1.5em;
+    margin: 16px 0 8px;
+  }
+  
+  .product-tile p {
+    font-size: 1em;
+    color: #555;
+  }

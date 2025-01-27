@@ -1,30 +1,23 @@
-import {
-    h, render,
-  } from '../../scripts/preact.js';
-  import htm from '../../scripts/htm.js';
-  import ProductsApp from './ProductsApp.js';
+import { h, render } from '../../scripts/preact.js';
+import htm from '../../scripts/htm.js';
+import ProductsApp from './ProductsApp.js';
 
-  
-  const html = htm.bind(h);
-  
-  export default async function decorate(block) {
-    block.textContent = '';
+const html = htm.bind(h);
 
-    try {
-      const response = await fetch('https://publish-p129970-e1492622.adobeaemcloud.com/graphql/execute.json/aem-demo-assets/adventures-all?b=c');
-      const data = await response.json();
+export default async function decorate(block) {
+  block.textContent = '';
 
-      const config = data.data.adventureList.items.reduce((acc, item) => {
-        acc[item.title] = item.description.plaintext;
-        return acc;
-      }, {});
+  try {
+    const response = await fetch('https://publish-p129970-e1492622.adobeaemcloud.com/graphql/execute.json/aem-demo-assets/adventures-all?b=c');
+    const data = await response.json();
 
-      console.log(config);
-      return new Promise((resolve) => {
-        const app = html`<h2>FAQs</h2><${ProductsApp} list=${config} resolve=${resolve} />`;
-        render(app, block);
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+    const items = data.data.adventureList.items;
+
+    return new Promise((resolve) => {
+      const app = html`<${ProductsApp} list=${items} resolve=${resolve} />`;
+      render(app, block);
+    });
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
+}

@@ -1,19 +1,15 @@
-import {
-    h,
-  } from '../../scripts/preact.js';
-  import htm from '../../scripts/htm.js';
+import { h } from '../../scripts/preact.js';
+import htm from '../../scripts/htm.js';
 
-  const html = htm.bind(h);
-
-  // Function to convert keys into readable questions
-const toQuestion = (key) => key.replace(/-/g, ' ').toUpperCase();
+const html = htm.bind(h);
 
 const ProductsApp = ({ list, resolve }) => {
-  const detailItems = Object.entries(list).map(([key, value]) => html`
-    <details class="accordion-item">
-      <summary class="accordion-item-label">${toQuestion(key)}</summary>
-      <div class="accordion-item-body">${value}</div>
-    </details>
+  const detailItems = list.map((item) => html`
+    <div class="product-tile">
+      <img src="${item.primaryImage._dynamicUrl}" alt="${item.title}" />
+      <h2>${item.title}</h2>
+      <p>${item.description.plaintext}</p>
+    </div>
   `);
   resolve();
   return html`${detailItems}`;
