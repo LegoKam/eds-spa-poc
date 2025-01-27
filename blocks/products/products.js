@@ -11,7 +11,7 @@ import {
     block.textContent = '';
 
     try {
-      const response = await fetch('https://publish-p129970-e1492622.adobeaemcloud.com/graphql/execute.json/aem-demo-assets/adventures-all');
+      const response = await fetch('https://publish-p129970-e1492622.adobeaemcloud.com/graphql/execute.json/aem-demo-assets/adventures-all?a=b');
       const data = await response.json();
 
       const config = data.data.adventureList.items.reduce((acc, item) => {
@@ -19,6 +19,7 @@ import {
         return acc;
       }, {});
 
+      console.log(config);
       return new Promise((resolve) => {
         const app = html`<h2>FAQs</h2><${ProductsApp} list=${config} resolve=${resolve} />`;
         render(app, block);
