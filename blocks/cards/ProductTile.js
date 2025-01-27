@@ -2,8 +2,6 @@ import { h } from '../../scripts/preact.js';
 import htm from '../../scripts/htm.js';
 
 
-const html = htm.bind(h);
-
 export default function ProductTile({ product }) {
     console.log(product);
 
