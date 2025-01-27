@@ -8,7 +8,7 @@ import {
   // Function to convert keys into readable questions
 const toQuestion = (key) => key.replace(/-/g, ' ').toUpperCase();
 
-const MyList = ({ list, resolve }) => {
+const ProductsApp = ({ list, resolve }) => {
   const detailItems = Object.entries(list).map(([key, value]) => html`
     <details class="accordion-item">
       <summary class="accordion-item-label">${toQuestion(key)}</summary>
