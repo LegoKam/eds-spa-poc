@@ -9,7 +9,6 @@ import {
   
   export default async function decorate(block) {
 
-    const divTag = document.createElement('div');
     const config = {
         "who-is-wknd-intended-audience": "We believe the best adventures and activities are those that are accessible to everyone. WKND is designed to be inclusive of all age ranges, abilities, and budget levels. We strive to cater to the thrill-seeking adrenaline junkie BASE-jumpers as well as novices that have a spare weekend and interest in trying something new.",
         "how-does-wknd-pay-for-itself": "WKND charges a small fee for local promoters that want to sponsor their adventures and events on the WKND site. Sponsored Adventures may get sorted to more prominent positions in our Adventures listings pages.",
@@ -23,7 +22,7 @@ import {
     block.textContent = '';
   
     return new Promise((resolve) => {
-      const app = html`<${ProductsApp} list=${config} resolve=${resolve} />`;
+      const app = html`<h2>FAQs</h2><${ProductsApp} list=${config} resolve=${resolve} />`;
       render(app, block);
     });
   }
